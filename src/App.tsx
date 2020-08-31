@@ -1,25 +1,58 @@
 import React from 'react';
-import logo from './logo.svg';
+
+import logoTop from './assets/logo-top.png';
+import LogoFullCycle from './assets/logo-fullcycle.png';
+import LogoLinkedIn from './assets/logo_linkedin.png';
+import logoGithub from './assets/logo_github.png';
+
+
 import './App.css';
+import './styles';
+import {
+  AppContainer,
+  Header,
+  Content,
+  Footer,
+  FooterText01,
+  FooterImagesContainer,
+  ImageFooter,
+} from './styles';
+import Routes from './routes';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
+    <AppContainer>
+      <Header>
+        <img src={logoTop} alt="logo" />
+        <img src={LogoFullCycle} alt="logo" />
+
+      </Header>
+      <Content>
+        <Routes />
+      </Content>
+      <Footer>
+        <FooterText01>Desenvolvido por</FooterText01>
+        <a href="mailto:orodrigo380@gmail.com">
+          Rodrigo Abreu de Oliveira
         </a>
-      </header>
-    </div>
+        <FooterImagesContainer>
+          <a
+            href="https://github.com/tigelah"
+            // eslint-disable-next-line react/jsx-no-target-blank
+            target="_blank"
+          >
+            <ImageFooter src={logoGithub} alt="Logo GitHub" />
+          </a>
+          <a
+            href="https://www.linkedin.com/in/rodrigo-abreu-de-oliveira/"
+            // eslint-disable-next-line react/jsx-no-target-blank
+            target="_blank"
+          >
+            <ImageFooter src={LogoLinkedIn} alt="Logo Linkedin" />
+          </a>
+        </FooterImagesContainer>
+      </Footer>
+    </AppContainer>
   );
 }
 
